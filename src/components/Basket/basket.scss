@@ -1,0 +1,62 @@
+.basket-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  margin: 4% auto;
+  width: 92%;
+  border-radius: 6px;
+  background-color: #f0e0e0;
+  .list-container {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    margin: 24px;
+    .add-item-container {
+      display: grid;
+      padding: 10px;
+      grid-template-columns: auto 30%;
+      .add-item-input {
+        width: 90%;
+        height: 16px;
+      }
+      .add-input-button {
+        button {
+          height: 20px;
+          width: 60px;
+        }
+      }
+    }
+    .list-items-container {
+      background-color: #b2bbca;
+      border-radius: 4px;
+      .list-item {
+        display: grid;
+        grid-template-columns: 1rem auto 10%;
+        grid-template-rows: 1fr;
+        border-radius: 4px;
+        background-color: #8f9cb4;
+        grid-column-gap: 10px;
+        margin: 10px 10px;
+        padding: 5px;
+        .item-checkbox {
+          input[type="checkbox"] {
+            font-size: 16px;
+          }
+        }
+        .item-delete-button {
+          justify-self: flex-end;
+        }
+      }
+    }
+    .item-transfer-container {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      align-items: center;
+      button {
+        width: 8rem;
+        height: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}

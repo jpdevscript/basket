@@ -1,0 +1,80 @@
+{
+  "lists": {
+    "list1": [
+      {
+        "id": 1,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 2,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 3,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 4,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 5,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 6,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 7,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 8,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      },
+      {
+        "id": 9,
+        "value": "Lorem ipsum dolor sit amet, list 1"
+      }
+    ],
+    "list2": [
+      {
+        "id": 11,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 21,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 31,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 41,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 51,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 61,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 71,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 81,
+        "value": "quam consectetuer, list 2"
+      },
+      {
+        "id": 91,
+        "value": "quam consectetuer, list 2"
+      }
+    ]
+  }
+}
