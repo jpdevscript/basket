@@ -1,4 +1,4 @@
-import { types, checkbox, addItem, transferButton, addItemButton, deleteButton } from './constants';
+import { types } from './constants';
 
 export const loadList = () => {
   return {
@@ -6,38 +6,41 @@ export const loadList = () => {
   }
 }
 
-export const handleChangeEvent = (list, value, inputType) => {
-  if (inputType === checkbox) {
-    return {
-      type: types.HANDLE_CHANGE_EVENT_FOR_ITEM_CHECKBOX,
-      fromList: list,
-      id: value
-    }
-  } else if (inputType === addItem) {
-    return {
-      type: types.HANDLE_CHANGE_EVENT_FOR_ADD_INPUT_TYPES,
-      fromList: list,
-      value
-    }
+export const itemCheckboxEvent = (list, value) => {
+  return {
+    type: types.HANDLE_CHANGE_EVENT_FOR_ITEM_CHECKBOX,
+    fromList: list,
+    id: value
   }
 }
 
-export const handleClickEvent = (list, value, inputType) => {
-  if (inputType === transferButton) {
-    return {
-      type: types.CLICK_TRANSFER_BUTTON_FOR_LIST,
-      fromList: list
-    }
-  } else if (inputType === addItemButton) {
-    return {
-      type: types.CLICK_ADD_BUTTON_INSERT_INTO_LIST,
-      fromList: list
-    }
-  } else if (inputType === deleteButton) {
-    return {
-      type: types.CLICK_DELETE_BUTTON_FOR_ITEM,
-      fromList: list,
-      id: value
-    }
+export const addItemChangeEvent = (list, value) => {
+  return {
+    type: types.HANDLE_CHANGE_EVENT_FOR_ADD_ITEM,
+    fromList: list,
+    value
+  }
+}
+
+export const itemDeleteEvent = (list, value) => {
+  return {
+    type: types.HANDLE_DELETE_ITEM_FOR_LIST,
+    fromList: list,
+    id: value
+  }
+}
+
+export const itemAddEvent = (list, value) => {
+  return {
+    type: types.HANDLE_ADD_ITEM_FOR_LIST,
+    fromList: list
+  }
+}
+
+
+export const itemTransferEvent = (list, value) => {
+  return {
+    type: types.HANDLE_TRANSFER_ITEM_FOR_LIST,
+    fromList: list
   }
 }

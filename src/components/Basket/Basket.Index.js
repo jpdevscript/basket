@@ -5,27 +5,30 @@ import Button from "../Generic/Button";
 import "./basket.scss";
 
 export default class Basket extends Component {
+
   componentDidMount() {
     this.props.onLoadList();
   }
 
-  /**
-   * @method handleChange
-   * @description handle change-event for all input types
-   * @param `list, event`
-   */
-  handleChange = list => ({ target: { value, name } }) => {
-    this.props.onHandleChangeEvent(list, value, name);
-  };
+  handleItemCheckbox = list => event => {
+    this.props.onItemCheckboxEvent(list, event.target.value);
+  }
 
-  /**
-   * @method handleClick
-   * @description handle click-event for all button types
-   * @param `list, event`
-   */
-  handleClick = list => ({ target: { value, name } }) => {
-    this.props.onHandleClickEvent(list, value, name);
-  };
+  handleItemDelete = list => event => {
+    this.props.onItemDeleteEvent(list, event.target.value);
+  }
+
+  handleOnChangeAddItem = list => event => {
+    this.props.onChangeAddItemEvent(list, event.target.value);
+  }
+
+  handleItemAdd = list => event => {
+    this.props.onItemAddEvent(list, event.target.value);
+  }
+
+  handleItemTransfer = list => event => {
+    this.props.onItemTransferEvent(list, event.target.value);
+  }
 
   renderList = (data, list) => {
     return (
@@ -37,14 +40,14 @@ export default class Basket extends Component {
                 type="checkbox"
                 name="checkbox"
                 value={v.id}
-                onChange={this.handleChange(list)}
+                onChange={this.handleItemCheckbox(list)}
               />
               <div className="item-self">{v.value}</div>
               <Button
                 type="button"
                 name="deleteButton"
                 value={v.id}
-                onClick={this.handleClick(list)}
+                onClick={this.handleItemDelete(list)}
               >
                 Delete
               </Button>
@@ -63,12 +66,12 @@ export default class Basket extends Component {
             type="text"
             name="addItem"
             value={this.props.addItemValue}
-            onChange={this.handleChange(this.props.list)}
+            onChange={this.handleOnChangeAddItem(this.props.list)}
           />
           <Button
             type="button"
             name="addItemButton"
-            onClick={this.handleClick(this.props.list)}
+            onClick={this.handleItemAdd(this.props.list)}
           >
             Add
           </Button>
@@ -80,7 +83,7 @@ export default class Basket extends Component {
           <Button
             type="button"
             name="transferButton"
-            onClick={this.handleClick(this.props.list)}
+            onClick={this.handleItemTransfer(this.props.list)}
           >
             Transfer
           </Button>
@@ -94,6 +97,9 @@ Basket.propTypes = {
   addItemValue: PropTypes.string,
   list: PropTypes.string,
   listData: PropTypes.array,
-  onHandleChangeEvent: PropTypes.func,
-  onHandleClickEvent: PropTypes.func
+  handleItemCheckbox: PropTypes.func,
+  handleItemDelete: PropTypes.func,
+  handleOnChangeAddItem: PropTypes.func,
+  handleItemAdd: PropTypes.func,
+  handleItemTransfer: PropTypes.func,
 };
